@@ -3,14 +3,17 @@ import React, {useState, useEffect} from 'react'
 function App() {
   const [text, setText] = useState('')
   const [timer, setTimer] = useState(5)
+  const [startGame, setStartGame] = useState(false)
 
   useEffect(() => {
-    if(timer > 0) {
+    if(startGame && timer > 0) {
       setTimeout(() => {
-        setTimer(time => time -1)
+        setTimer(time => time - 1)
       }, 1000)
+    } else if(setTimer === 0) {
+      startGame(false)
     }
-  }, [timer])
+  }, [timer, startGame])
 
   function handleChange(e) {
     const {value} = e.target
@@ -25,13 +28,13 @@ function App() {
   return (
     <div>
       <h1>Typing Game</h1>
-            <textarea 
-              onChange={handleChange}
-              value={text}
-            />
-            <h4>Time Remaining: {timer}</h4>
-            <button onClick={() => wordCount(text)}>Start</button>
-            <h1>Word Count: </h1>
+      <textarea 
+          onChange={handleChange}
+          value={text}
+      />
+      <h4>Time Remaining: {timer}</h4>
+      <button onClick={() => setStartGame(true)}>Start</button>
+      <h1>Word Count: {wordCount}</h1>
     </div>
   );
 }
