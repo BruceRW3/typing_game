@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 
 function App() {
   const STARTING_TIME = 5
@@ -7,6 +7,7 @@ function App() {
   const [timer, setTimer] = useState(STARTING_TIME)
   const [timerStart, setTimerStart] = useState(false)
   const [wordCount, setWordCount] = useState(0)
+  const textRef = useRef(null)
   
  function handleChange(e) {
     const {value} = e.target
@@ -22,6 +23,8 @@ function App() {
     setTimerStart(true)
     setTimer(STARTING_TIME)
     setText('')
+    textRef.current.disabled = false
+    textRef.current.focus()
   }
 
   function endGame() {
@@ -43,6 +46,7 @@ function App() {
     <div>
       <h1>Typing Game</h1>
       <textarea 
+          ref={textRef}
           onChange={handleChange}
           value={text}
           disabled={!timerStart}
