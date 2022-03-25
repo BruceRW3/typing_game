@@ -1,4 +1,4 @@
-import {useState, useEffect, useRef, useCallback} from 'react'
+import {useState, useEffect, useRef} from 'react'
 
 function useGame(startingTime = 10) {
         const [text, setText] = useState('')
@@ -38,6 +38,7 @@ function useGame(startingTime = 10) {
           } else if(timer === 0) {
             endGame()
           }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         }, [timer, timerStart])
 
         return {timer, timerStart, startGame, handleChange, textRef, wordCount, text}
