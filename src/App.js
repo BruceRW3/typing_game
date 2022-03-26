@@ -16,6 +16,7 @@ function App() {
     <div>
       <h1>Typing Game</h1>
       <textarea 
+          placeholder="Hi, my name is (your name here). It is nice to meet you. I hope you have a great day!"
           ref={textRef}
           onChange={handleChange}
           value={text}

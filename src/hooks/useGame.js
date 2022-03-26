@@ -1,6 +1,6 @@
 import {useState, useEffect, useRef} from 'react'
 
-function useGame(startingTime = 10) {
+function useGame(startingTime = 15) {
         const [text, setText] = useState('')
         const [timer, setTimer] = useState(startingTime)
         const [timerStart, setTimerStart] = useState(false)
@@ -14,7 +14,7 @@ function useGame(startingTime = 10) {
       
         function calculateWordCount(text) {
           const wordsArr = text.trim().split(' ')
-          return wordsArr.filter(word => word !== '').length * 6
+          return wordsArr.filter(word => word !== '').length * 4
         }
       
         function startGame() {
