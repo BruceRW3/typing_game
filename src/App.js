@@ -15,6 +15,7 @@ function App() {
   return (
     <div>
       <h1>Typing Game</h1>
+      <p>Type anything as fast you can!</p>
       <textarea 
           placeholder="Hi, my name is (your name here). It is nice to meet you. I hope you have a great day!"
           ref={textRef}

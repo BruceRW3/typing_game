@@ -28,19 +28,30 @@ button:disabled {
 }
 
 h1 {
-  font-size: 20px;
+  font-size: 30px;
   text-align:center;
+}
+
+h4 {
+  font-size: 20px;
+  text-align: center;
 }
 
 textarea {
   font-family: 'Press Start 2P', Arial, Helvetica, sans-serif;
   border: 3px solid black;
+  font-size: 20px;
   width: 90%;
   margin: 0 auto;
   outline: none;
   height: 200px;
   background: #00b800;
   padding: 10px;
+}
+
+::placeholder {
+  color: #000;
+  opacity: .75;
 }
 
 textarea:disabled {
